@@ -1,0 +1,3 @@
+Total_Members=1
+
+{'memberNumber': 1, 'Name': 'Charlie', 'Surname': 'Bird', 'Address': '15 Loxl', 'City': 'Mansfield', 'Postcode': 'ng18', 'DateOfBirth': '15 July 2007'}
