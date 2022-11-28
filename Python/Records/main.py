@@ -34,24 +34,9 @@ def locate(condition, name, member_number):
                             header = "Member Number"
                             print(
                                 f"\nA match has been found for {header} {condition}:\n======================================\nName: {string['Name']}\nSurname: {string['Surname']}\nMember Number: {string['memberNumber']}\nAddress: {string['Address']}\nCity: {string['City']}\nPostcode: {string['Postcode']}\nDate of Birth: {string['DateOfBirth']}\n======================================")
-            """
-             print(text.find("{"))
-            print(text[text.find("{")], text[-1], text[text.find("}")]) # -1 = last character of the file
-            print(text.index(text[text.find("} ")]))
-            print(text.index(text[text.find("}")]))
-            res = ''
-            # getting elements in between
-            for idx in range(text.find("{") + 1, 162):
-                res = res + text[idx]
-            
-            # printing result
-            print("The extracted string : " + res)
-            """
-
 
 while True:
-    choice = input(
-        "Are you a new or existing member? (N for New, E for Existing) ")
+    choice = input("Are you a new or existing member? (N for New, E for Existing) ")
 
     if choice.upper() == "N":
         name = input("What is your first name? ")
@@ -66,10 +51,10 @@ while True:
         # print(newMember)
         
         newFirst = f"Total_Members={MemberNumber}"
-        membersFile = open("members.txt", "w")
-        membersFile.write(newFirst + "\n")
-        membersFile.write(wholeFile + f"\n{str(newMember)}")
-        membersFile.close()
+        with open("members.txt", "w") as membersFile:
+            membersFile.write(newFirst + "\n")
+            membersFile.write(wholeFile + f"\n{str(newMember)}")
+            membersFile.close()
     elif choice.upper() == "E":
         account_name = input("What is the name on your account? ").capitalize()
         member_number = input("What is your member number? ")
