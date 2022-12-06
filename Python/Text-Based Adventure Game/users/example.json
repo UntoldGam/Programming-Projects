@@ -1,4 +1,6 @@
 {
     "name": "User",
-    "health": 100
+    "health": 100,
+    "healthBonus": 0.1,
+    "locations_unlocked": ["forest_1","forest_2"]
 }
